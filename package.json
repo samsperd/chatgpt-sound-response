@@ -1,0 +1,21 @@
+{
+  "name": "chatgptspeechifier",
+  "version": "1.0.0",
+  "description": "gives the user the ability to listen to chatgpt replies as an audio",
+  "scripts": {
+    "build": "parcel build src/background.js src/content.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "parcel-plugin-static-files-copy": "^2.6.0"
+  },
+  "browserslist": [
+    "last 1 Chrome versions"
+  ],
+  "dependencies": {
+    "speak-tts": "^2.0.8",
+    "talkify-tts": "^3.9.3"
+  }
+}

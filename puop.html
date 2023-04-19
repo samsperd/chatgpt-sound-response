@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .scroll-box {
+      width: 200px;
+      height: 100px;
+      overflow: hidden;
+      border: 1px solid #000;
+      padding: 5px;
+      white-space: nowrap;
+      position: relative;
+    }
+
+    .scroll-box p {
+      animation: marquee 10s linear infinite;
+      display: inline-block;
+      padding-right: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="scroll-box" id="myScrollBox">
+    <p id="scrollingText">This is some dynamically added text that will scroll horizontally inside the box like a marquee.</p>
+  </div>
+
+  <div id="counter"></div>
+
+  <p class="test">This Scrolling test made with jQuery on hover event. it easy than javascript i use it with class so I attact an event to it class and all work perfect.</p>
+
+  <script>
+    // Get the scrolling text element
+    const scrollingText = document.getElementById('scrollingText');
+    let counter = document.getElementById('counter')
+
+    // Get the text content
+    const textContent = scrollingText.textContent;
+
+    // Update the text content with the length of the scrolled text
+    function updateTextContent() {
+      const scrollPercentage = (100 * (-scrollingText.getBoundingClientRect().left)) / scrollingText.offsetWidth;
+      const scrolledLength = (scrollPercentage * textContent.length) / 100;
+      scrollingText.textContent = textContent.slice(scrolledLength) + textContent.slice(0, scrolledLength);
+      console.log(scrolledLength, 'book', scrollPercentage, "food");
+    }
+
+    // Call the updateTextContent() function on animation iteration
+    scrollingText.addEventListener('animationiteration', updateTextContent);
+  </script>
+</body>
+</html>
