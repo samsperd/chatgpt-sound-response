@@ -1,0 +1,48 @@
+body {
+    width: 350px;
+    height: 280px;
+    padding: 0;
+}
+
+.fittingbox {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-bottom: 1px dotted gray;    
+}
+
+.headingbox {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #00A67E;
+    display: grid;
+    place-items: center;
+    color: white;
+    background-color: #00A67E;
+}
+
+
+.customizations {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 20px !important;
+    margin-top: 15px;
+    gap: 10px;
+}
+
+.customization {
+    /* border: 1px solid #000; */
+
+}
+
+.customization h5, label {
+    padding: 0;
+    font-size: 14px;
+    margin: 5px 0 8px;
+    color: rgb(94, 94, 94);
+}
+
+.custom_select {
+    width: 100%;
+    height: 30px;
+}
